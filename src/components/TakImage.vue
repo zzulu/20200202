@@ -42,7 +42,7 @@ export default {
     }
   },
   methods: {
-    isBday:function () {
+    isBday: function () {
       return this.word == '20200202'
     }
   },
