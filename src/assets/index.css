@@ -1,0 +1,34 @@
+@import 'fonts.css';
+
+* {
+  font-family: 'Spoqa Han Sans', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+input {
+  color: #495057; /* oc-gray-7 */
+}
+
+input:focus {
+  border-color: #868e96;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #dee2e6;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #dee2e6;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #dee2e6;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #dee2e6;
+}
