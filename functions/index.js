@@ -3,12 +3,29 @@ const express = require('express');
 
 const app = express();
 
-app.get('/api/:word', (req, res) => {
-  const word = req.params.word;
-  const palindrome = word == [...word].reverse().join('')
+app.get('/api', (req, res) => {
+  if ('word' in req.query) {
+    const word = req.query.word;
+    const palindrome = word == [...word].reverse().join('');
 
-  res.status(200).json({ word, palindrome });
+    res.status(200).json({
+      'ok': true,
+      word,
+      palindrome,
+    });
+  }
+
+  res.status(422).json({
+    'ok': false,
+    'status': 422,
+    'message': 'Required parameter missing: word',
+  });
 });
 
+const runtimeOpts = {
+  timeoutSeconds: 30,
+  memory: '128MB',
+}
+
 // Expose Express API as a single Cloud Function:
-exports.palindrome = functions.https.onRequest(app);
+exports.palindrome = functions.runWith(runtimeOpts).https.onRequest(app);
