@@ -23,6 +23,7 @@ export default {
   outline: none;
   font-size: 1.75rem;
   border: 2px solid #ced4da;
+  margin-bottom: 64px;
   padding: 1rem;
   transition: color .15s ease-in-out, border-color .15s ease-in-out;
 }
