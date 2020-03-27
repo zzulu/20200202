@@ -32,7 +32,7 @@
   "palindrome": true
 }</pre>
         </div>
-        <a href="#api" v-on:click="api = !api">
+        <a href="#" v-on:click="api = !api">
           API
         </a>
         <span>&middot;</span>Made by <a href="https://github.com/zzulu" target="_blank">zzulu</a>, myong. Thanks to tak.
