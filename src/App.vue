@@ -10,7 +10,32 @@
                         'false': word && !typing && !isPalindrome }"
         v-model="word"/> 
       <footer class="footer">
-        Made by zzulu, myong. Thanks to tak.
+        <div v-show="api" class="api">
+          <p><b>GET</b>/api</p>
+          <dl class="row">
+            <div class="col">
+              <dt>Parameter</dt>
+              <dd>word</dd>
+            </div>
+            <div class="col">
+              <dt>Type</dt>
+              <dd>string</dd>
+            </div>
+            <div class="col">
+              <dt>Required</dt>
+              <dd>true</dd>
+            </div>
+          </dl>
+          <pre>{
+  "ok": true,
+  "word": "wow",
+  "palindrome": true
+}</pre>
+        </div>
+        <a href="#api" v-on:click="api = !api">
+          API
+        </a>
+        <span>&middot;</span>Made by <a href="https://github.com/zzulu" target="_blank">zzulu</a>, myong. Thanks to tak.
       </footer>
     </div>
   </div>
@@ -28,6 +53,7 @@ export default {
       word: '',
       typing: false,
       isPalindrome: true,
+      api: false,
     }
   },
   methods: {
@@ -62,10 +88,66 @@ export default {
 
 .footer {
   position: absolute;
-  right: 8px;
-  bottom: 8px;
   font-size: .75rem;
   color: #868e96;
+  bottom: 8px;
+  right: 8px;
+}
+
+.footer > a {
+  display: inline-block;
+  color: #868e96;
+  text-decoration: none;
+}
+
+.footer > a:hover {
+  color: #adb5bd;
+}
+
+.footer > span {
+  margin-right: .25rem;
+  margin-left: .25rem;
+}
+
+.api {
+  position: absolute;
+  bottom: 1.5rem;
+  left: -.25rem;
+  border: 1px solid #ced4da;
+  padding: .5rem 1rem;
+  background-color: #fff;
+}
+
+.api > p {
+  margin-top: .5em;
+}
+
+.api > p > b {
+  margin-right: .5rem;
+}
+
+.row {
+  display: flex;
+  border: 1px solid #adb5bd;
+  margin-bottom: 1.5em;
+}
+
+.col {
+  flex-grow: 1;
+}
+
+.col:not(:last-child) {
+  border-right: 1px solid #adb5bd;
+}
+
+.col > dt,
+.col > dd {
+  padding: .25rem .5rem;
+}
+
+.col > dt {
+  color: #fff;
+  background-color: #adb5bd;
 }
 
 .container {

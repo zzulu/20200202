@@ -1,6 +1,7 @@
 @import 'fonts.css';
 
 * {
+  box-sizing: border-box;
   font-family: 'Spoqa Han Sans', sans-serif;
 }
 
@@ -9,6 +10,14 @@ html, body {
 }
 
 body {
+  margin: 0;
+}
+
+pre {
+  font-family: monaco, Consolas, Menlo, Courier, monospace;
+}
+
+dd {
   margin: 0;
 }
 
