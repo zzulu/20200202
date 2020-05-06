@@ -32,7 +32,7 @@
   "palindrome": true
 }</pre>
         </div>
-        <a href="#" v-on:click="api = !api">
+        <a id="api" v-on:click="api = !api">
           API
         </a>
         <span>&middot;</span>Made by <a href="https://github.com/zzulu" target="_blank">zzulu</a>, myong. Thanks to tak.
@@ -107,6 +107,10 @@ export default {
 .footer > span {
   margin-right: .25rem;
   margin-left: .25rem;
+}
+
+#api:hover {
+  cursor: pointer;
 }
 
 .api {
