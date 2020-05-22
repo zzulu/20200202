@@ -13,13 +13,13 @@ app.get('/api', (req, res) => {
       word,
       palindrome,
     });
+  } else {
+    res.status(422).json({
+      'ok': false,
+      'status': 422,
+      'message': 'Required parameter missing: word',
+    });
   }
-
-  res.status(422).json({
-    'ok': false,
-    'status': 422,
-    'message': 'Required parameter missing: word',
-  });
 });
 
 const runtimeOpts = {
